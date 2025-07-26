@@ -1,0 +1,7 @@
+# Ignore PS1 assets
+mods/ra_ps1/bits/
+mods/ra_ps1/sound/
+# Build artifacts
+engine/bin/
+engine/obj/
+engine/

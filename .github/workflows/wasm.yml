@@ -1,0 +1,20 @@
+name: Build WASM
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+      - run: dotnet publish engine/OpenRA.Game -c Release -p:PublishAot=true -r browser-wasm
+      - name: Deploy to Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: engine/OpenRA.Game/bin/Release/net8.0/browser-wasm/publish

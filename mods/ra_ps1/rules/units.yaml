@@ -1,0 +1,6 @@
+# Example unit definition
+Units:
+  e1:
+    Name: GI
+    Cost: 100
+    BuildTime: 5

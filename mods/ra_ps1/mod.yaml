@@ -1,0 +1,6 @@
+Name: RA_PS1
+Title: "Red Alert PS1"
+RequireMod: ra
+Rules: rules/units.yaml
+LuaScripts:
+  - lua/ai.lua
